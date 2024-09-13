@@ -1,14 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <RootNamespace>ERP-InsightWise.Database</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>ERP_InsightWise.API</RootNamespace>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\WeatherForecastController.cs" />
+    <None Include="ERP_InsightWise.Database.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,12 +22,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Oracle.EntityFrameworkCore" Version="8.23.50" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ERP-InsightWise.Database\ERP-InsightWise.Database.csproj" />
-    <ProjectReference Include="..\ERP-InsightWise.Repository\ERP-InsightWise.Repository.csproj" />
   </ItemGroup>
 
 </Project>
