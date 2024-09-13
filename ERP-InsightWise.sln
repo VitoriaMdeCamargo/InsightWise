@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP-InsightWise.API", "ERP-InsightWise.API\ERP-InsightWise.API.csproj", "{7DB5A40F-F7E9-4C8B-91DB-27796B7C7272}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ERP-InsightWise.API", "ERP-InsightWise.API\ERP-InsightWise.API.csproj", "{7DB5A40F-F7E9-4C8B-91DB-27796B7C7272}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C1052BF2-15AE-4716-8E33-EDC3224C5D8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0B003F58-87B5-454B-96E3-6842B642CD71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP-InsightWise.Database", "ERP-InsightWise.Database\ERP-InsightWise.Database.csproj", "{86B298FC-166F-4EFF-B64A-88A027DB3998}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP-InsightWise.Repository", "ERP-InsightWise.Repository\ERP-InsightWise.Repository.csproj", "{8B9B1298-6002-4BF2-B4E0-CCAE89AB3C1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +23,22 @@ Global
 		{7DB5A40F-F7E9-4C8B-91DB-27796B7C7272}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DB5A40F-F7E9-4C8B-91DB-27796B7C7272}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DB5A40F-F7E9-4C8B-91DB-27796B7C7272}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86B298FC-166F-4EFF-B64A-88A027DB3998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86B298FC-166F-4EFF-B64A-88A027DB3998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86B298FC-166F-4EFF-B64A-88A027DB3998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86B298FC-166F-4EFF-B64A-88A027DB3998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B9B1298-6002-4BF2-B4E0-CCAE89AB3C1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B9B1298-6002-4BF2-B4E0-CCAE89AB3C1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B9B1298-6002-4BF2-B4E0-CCAE89AB3C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B9B1298-6002-4BF2-B4E0-CCAE89AB3C1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7DB5A40F-F7E9-4C8B-91DB-27796B7C7272} = {C1052BF2-15AE-4716-8E33-EDC3224C5D8E}
+		{86B298FC-166F-4EFF-B64A-88A027DB3998} = {C1052BF2-15AE-4716-8E33-EDC3224C5D8E}
+		{8B9B1298-6002-4BF2-B4E0-CCAE89AB3C1A} = {C1052BF2-15AE-4716-8E33-EDC3224C5D8E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B59773D-8B77-4103-BC56-0B389FF4E0AE}

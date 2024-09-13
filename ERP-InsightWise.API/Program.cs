@@ -1,4 +1,11 @@
 
+using ERP_InsightWise.Database;
+using ERP_InsightWise.Repository.Interface;
+using ERP_InsightWise.Repository;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using ERP_InsightWise.Database.Models;
+
 namespace ERP_InsightWise.API
 {
     public class Program
@@ -11,10 +18,57 @@ namespace ERP_InsightWise.API
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+
+            builder.Services.AddSwaggerGen(swagger =>
+            {
+                //Adiciona a possibilidade de enviar token para o controller
+                swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] {}
+                    }
+                });
+
+                //Codigo para mudar a documentação do Swagger
+                swagger.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = builder.Configuration.GetSection("Swagger:Title").Value,
+                    Description = builder.Configuration.GetSection("Swagger:Description").Value,
+                    Contact = new OpenApiContact()
+                    {
+                        Email = builder.Configuration.GetSection("Swagger:Email").Value,
+                        Name = builder.Configuration.GetSection("Swagger:Name").Value
+                    }
+                });
+            });
+
+            builder.Services.AddDbContext<FIAPDBContext>(options =>
+            {
+                options.UseOracle(builder.Configuration.GetConnectionString("FIAPDatabase"));
+            });
+
+            builder.Services.AddScoped<IRepository<Funcionario>, Repository<Funcionario>>();
 
             var app = builder.Build();
+
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
