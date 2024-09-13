@@ -1,0 +1,6 @@
+@ERP_InsightWise.API_HostAddress = http://localhost:5144
+
+GET {{ERP_InsightWise.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
