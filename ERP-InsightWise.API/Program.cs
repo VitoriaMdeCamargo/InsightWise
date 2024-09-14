@@ -62,7 +62,8 @@ namespace ERP_InsightWise.API
 
             builder.Services.AddDbContext<FIAPDBContext>(options =>
             {
-                options.UseOracle(builder.Configuration.GetConnectionString("FIAPDatabase"));
+                options.UseOracle(builder.Configuration.GetConnectionString("FIAPDatabase"),
+                    b => b.MigrationsAssembly("ERP-InsightWise.Database"));
             });
 
             builder.Services.AddScoped<IRepository<Funcionario>, Repository<Funcionario>>();
