@@ -1,3 +1,4 @@
+![Logo do Projeto]("C:\Users\User\source\repos\Nova pasta (3)\ERP-InsightWise.API\wwwroot\imagens\insightwisetextlogopurple.png")
 
 # InsightWise 
 
