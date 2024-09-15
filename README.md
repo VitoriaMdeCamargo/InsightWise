@@ -1,5 +1,11 @@
+![Logo Preto](https://i.imgur.com/LyQ6ygf.png)
 
-# InsightWise 
+
+
+## 
+ASP.NET Core Web API com operação CRUD de cadastro de funcionário para coleta de dados de interação de usuários com a plataforma submetendo a teste de modelo de analise de produtividade de usuários em softwares ERP.
+##
+
 
 ## Integrantes do Grupo
 - **Breno Lemes Santiago** - RM: 552270
@@ -47,4 +53,4 @@ Esse modelo facilita o desenvolvimento e a implantação, uma vez que a aplicaç
 1. **Clone o Repositório**
 
    ```bash
-   git clone https://github.com/seu-usuario/erp-insightwise.git
+   git clone https://github.com/LuizLucena97/ERP-InsightWise.git
