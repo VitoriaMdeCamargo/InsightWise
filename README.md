@@ -46,4 +46,4 @@ Esse modelo facilita o desenvolvimento e a implantação, uma vez que a aplicaç
 1. **Clone o Repositório**
 
    ```bash
-   git clone https://github.com/seu-usuario/erp-insightwise.git
+   git clone https://github.com/LuizLucena97/ERP-InsightWise.git
