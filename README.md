@@ -1,4 +1,4 @@
-![Logo Preto](https://imgur.com/a/QUMEsp9)
+![Logo Preto](https://i.imgur.com/LyQ6ygf.png)
 
 ## Integrantes do Grupo
 - **Breno Lemes Santiago** - RM: 552270
