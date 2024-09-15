@@ -1,5 +1,5 @@
 
-# ERP-InsightWise API
+# InsightWise 
 
 ## Integrantes do Grupo
 - **Breno Lemes Santiago** - RM: 552270
