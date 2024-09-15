@@ -30,4 +30,8 @@
     <ProjectReference Include="..\ERP-InsightWise.Repository\ERP-InsightWise.Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\imagens\" />
+  </ItemGroup>
+
 </Project>
