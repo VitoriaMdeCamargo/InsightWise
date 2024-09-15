@@ -3,7 +3,7 @@
 
 
 ## 
-ASP.NET Core Web API de cadastro de funcionário para coleta de dados de teste para modelo de analise de produtividade de usuários em softwares ERP.
+ASP.NET Core Web API de cadastro de funcionário para coleta de dados de interação de usuários com a plataforma submetendo a teste de modelo de analise de produtividade de usuários em softwares ERP.
 ##
 
 
