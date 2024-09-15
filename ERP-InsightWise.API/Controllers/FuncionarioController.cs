@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Net;
 using ERP_InsightWise.Repository.Interface;
 using ERP_InsightWise.Database.Models;
