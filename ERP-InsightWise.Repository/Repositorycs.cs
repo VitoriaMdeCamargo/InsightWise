@@ -32,13 +32,25 @@ namespace ERP_InsightWise.Repository
 
         public IEnumerable<T> GetAll()
         {
+            if (_dbSet == null)
+            {
+                throw new InvalidOperationException("DbSet não está inicializado.");
+            }
+
             return _dbSet.ToList();
         }
 
+
         public T GetById(int? id)
         {
+            if (id == null)
+            {
+                throw new ArgumentNullException(nameof(id), "O ID não pode ser nulo.");
+            }
+
             return _dbSet.Find(id);
         }
+
 
         public void Update(T entity)
         {
