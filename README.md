@@ -1,4 +1,4 @@
-![waving]([https://capsule-render.vercel.app/api?type=waving&height=200&text=Ol%C3%A1%2C%20me%20chamo%20Breno%21&fontAlign=50&fontAlignY=40&color=gradient&section=header](https://drive.google.com/file/d/1ArsHIT5-oAKzv7MHn5l3g6vw1xvhfygm/view?usp=drive_link))
+![waving](https://drive.google.com/file/d/1ArsHIT5-oAKzv7MHn5l3g6vw1xvhfygm/view?usp=drive_link)
 
 ## Integrantes do Grupo
 - **Breno Lemes Santiago** - RM: 552270
