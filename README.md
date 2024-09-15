@@ -1,4 +1,4 @@
-![waving]([https://drive.google.com/file/d/1ArsHIT5-oAKzv7MHn5l3g6vw1xvhfygm/view?usp=drive_link])
+![waving](https://drive.google.com/file/d/1ArsHIT5-oAKzv7MHn5l3g6vw1xvhfygm/view?usp=drive_link)
 
 ## Integrantes do Grupo
 - **Breno Lemes Santiago** - RM: 552270
