@@ -18,9 +18,9 @@ namespace ERP_InsightWise.Repository
 
         public void Add(T entity)
         {
-            _context.AddAsync(entity);
+            _context.Add(entity);
 
-            _context.SaveChangesAsync();
+            _context.SaveChanges();
         }
 
         public void Delete(T entity)
@@ -29,7 +29,7 @@ namespace ERP_InsightWise.Repository
 
             _context.SaveChanges();
         }
-
+        
         public IEnumerable<T> GetAll()
         {
             if (_dbSet == null)

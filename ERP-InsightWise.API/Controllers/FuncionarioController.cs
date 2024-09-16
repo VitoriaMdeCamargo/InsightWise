@@ -5,7 +5,7 @@ using ERP_InsightWise.Database.Models;
 
 namespace ERP_InsightWise.API.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class FuncionarioController : ControllerBase
     {
@@ -70,21 +70,41 @@ namespace ERP_InsightWise.API.Controllers
             }
         }
 
-        [HttpPatch]
+        [HttpPatch("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public IActionResult Patch([FromBody] Funcionario funcionario)
+        public IActionResult Patch(int id, [FromBody] Funcionario funcionario)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             try
             {
-                var existingFuncionario = _funcionarioRepository.GetById(funcionario.Id);
+                var existingFuncionario = _funcionarioRepository.GetById(id);
                 if (existingFuncionario == null)
                 {
-                    return NotFound($"O registro com o ID {funcionario.Id} não foi encontrado.");
+                    return NotFound($"O registro com o ID {id} não foi encontrado.");
                 }
 
-                _funcionarioRepository.Update(funcionario);
+                // Atualize os campos relevantes do funcionário
+                existingFuncionario.PrimeiroNome = funcionario.PrimeiroNome;
+                existingFuncionario.Sobrenome = funcionario.Sobrenome;
+                existingFuncionario.Cargo = funcionario.Cargo;
+                existingFuncionario.Salario = funcionario.Salario;
+                existingFuncionario.DataNascimento = funcionario.DataNascimento;
+                existingFuncionario.DataContratacao = funcionario.DataContratacao;
+                existingFuncionario.Endereco = funcionario.Endereco;
+                existingFuncionario.Telefone = funcionario.Telefone;
+                existingFuncionario.Email = funcionario.Email;
+                existingFuncionario.Departamento = funcionario.Departamento;
+                existingFuncionario.Status = funcionario.Status;
+                existingFuncionario.Genero = funcionario.Genero;
+                existingFuncionario.CargaHoraria = funcionario.CargaHoraria;
+
+                _funcionarioRepository.Update(existingFuncionario);
                 return Ok();
             }
             catch (Exception)
@@ -93,8 +113,10 @@ namespace ERP_InsightWise.API.Controllers
             }
         }
 
+
+
         [HttpDelete("{id}")]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public IActionResult Delete(int id)
@@ -108,7 +130,7 @@ namespace ERP_InsightWise.API.Controllers
                 }
 
                 _funcionarioRepository.Delete(funcionario);
-                return Ok();
+                return NoContent();
             }
             catch (Exception)
             {

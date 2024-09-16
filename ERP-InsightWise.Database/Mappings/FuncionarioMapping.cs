@@ -14,6 +14,11 @@ namespace ERP_InsightWise.Database.Mappings
             builder
                 .HasKey(x => x.Id);
 
+            // Configuração para auto-incremento
+            builder
+                .Property(x => x.Id)
+                .ValueGeneratedOnAdd();
+
             builder
                 .Property(x => x.PrimeiroNome)
                 .HasMaxLength(50)
