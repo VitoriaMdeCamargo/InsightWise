@@ -35,7 +35,7 @@ Esse modelo facilita o desenvolvimento e a implantação, uma vez que a aplicaç
 
 - **Padrão Repository**: Utilizado para abstrair a lógica de acesso a dados e promover a separação entre a lógica de negócios e o acesso ao banco de dados. Isso permite uma maior flexibilidade e facilidade na troca de mecanismos de persistência.
 
-- **Padrão Controller**: Implementado para gerenciar a lógica de controle e a interação entre o usuário e a aplicação. Os controladores são responsáveis por receber as requisições, processá-las e retornar as respostas apropriadas, mantendo uma separação clara entre a lógica de apresentação e a lógica de negócios.
+- **Padrão MVC**: Implementado para gerenciar a lógica de controle e a interação entre o usuário e a aplicação. Os controladores são responsáveis por receber as requisições, processá-las e retornar as respostas apropriadas, mantendo uma separação clara entre a lógica de apresentação e a lógica de negócios.
 
 - **Padrão Singleton**: Implementado para garantir que apenas uma instância de um serviço centralizado seja criada e utilizada em toda a aplicação. Este padrão é útil para gerenciar configurações e serviços que devem ser compartilhados entre diferentes partes da aplicação.
 
