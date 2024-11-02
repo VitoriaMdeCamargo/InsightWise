@@ -5,6 +5,7 @@ using ERP_InsightWise.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using ERP_InsightWise.Database.Models;
+using ERP_InsightWise.Service.CEP;
 
 namespace ERP_InsightWise.API
 {
@@ -13,6 +14,8 @@ namespace ERP_InsightWise.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddScoped<ICEPService, CEPService>();
 
             // Add services to the container.
 
