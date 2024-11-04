@@ -86,6 +86,15 @@ A API utiliza a ViaCEP para obter informações de endereços a partir do CEP fo
 - **Input**:
   ```
   Digitar um CEP válido
+## HealthCheck
+
+Usei **Health Check** para monitorar automaticamente a saúde dos serviços da minha aplicação, garantindo que cada componente esteja funcionando corretamente. Com isso, consigo identificar rapidamente falhas e indisponibilidades, permitindo redirecionar o tráfego para instâncias saudáveis e melhorar a resiliência do sistema. Em um ambiente com múltiplos serviços, essa prática é essencial para manter a alta disponibilidade e otimizar o desempenho geral, evitando que falhas em uma parte da aplicação afetem a experiência do usuário.
+
+**Exemplo de Uso:**
+
+- **URL**:
+  ```
+  https://localhost:7121/Health-Check
 ## Instruções para Rodar a API
 
 ### Pré-requisitos
