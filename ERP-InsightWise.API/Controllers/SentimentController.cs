@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyMLApp; // Namespace onde está sua classe SentimentModel
+using MyMLApp;
 
 namespace MySentimentApi.Controllers
 {
