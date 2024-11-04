@@ -6,6 +6,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using ERP_InsightWise.Database.Models;
 using ERP_InsightWise.Service.CEP;
+using ERP_InsightWise.API.Extensions;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using ERP_InsightWise.API.Configuration;
+using System.Configuration;
 
 namespace ERP_InsightWise.API
 {
@@ -16,6 +20,14 @@ namespace ERP_InsightWise.API
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddScoped<ICEPService, CEPService>();
+
+            IConfiguration configuration = builder.Configuration;
+
+            APPConfiguration appConfiguration = new APPConfiguration();
+
+            builder.Services.Configure<APPConfiguration>(configuration);
+
+            configuration.Bind(appConfiguration);
 
             // Add services to the container.
 
@@ -72,6 +84,8 @@ namespace ERP_InsightWise.API
 
             builder.Services.AddScoped<IRepository<Funcionario>, Repository<Funcionario>>();
 
+            builder.Services.AddHealthCheck(appConfiguration);
+
             var app = builder.Build();
 
 
@@ -89,6 +103,17 @@ namespace ERP_InsightWise.API
 
             app.MapControllers();
 
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+                endpoints.MapHealthChecks("/health-check", new HealthCheckOptions()
+                {
+                    Predicate = _ => true,
+                    ResponseWriter = HealthCheckExtensions.WriteResponse
+                });
+            });
 
             app.Run();
         }
