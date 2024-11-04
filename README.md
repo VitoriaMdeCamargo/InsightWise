@@ -72,8 +72,8 @@ Foi disponibilizado um endpoint que permite adicionar feedbacks sobre os funcion
 - **Corpo da Requisição**:
   ```json
   {
-      "col0": "O funcionário demonstrou grande comprometimento e habilidade na execução de suas tarefas.",
-      "col1": 
+      "col0": "O funcionário é bom e demonstrou grande comprometimento e habilidade na execução de suas tarefas.",
+      "col1": 0
   }
 
 ## Utilização do Serviço ViaCEP
