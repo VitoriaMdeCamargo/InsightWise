@@ -89,6 +89,7 @@ namespace ERP_InsightWise.API
 
             app.MapControllers();
 
+
             app.Run();
         }
     }

@@ -52,7 +52,7 @@ namespace MyMLApp
 
         #endregion
 
-        private static string MLNetModelPath = Path.GetFullPath("SentimentModel.mlnet");
+        private static string MLNetModelPath = Path.Combine(@"C:\Users\User\Downloads\InsightWise4\myMLApp", "SentimentModel.mlnet");
 
         public static readonly Lazy<PredictionEngine<ModelInput, ModelOutput>> PredictEngine = new Lazy<PredictionEngine<ModelInput, ModelOutput>>(() => CreatePredictEngine(), true);
 

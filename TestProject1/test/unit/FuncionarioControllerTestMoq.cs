@@ -5,7 +5,7 @@ using ERP_InsightWise.Repository.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
-namespace ERP_InsightWise.Tests.Controllers
+namespace test.unit
 {
     public class FuncionarioControllerTestMoq
     {
@@ -35,7 +35,7 @@ namespace ERP_InsightWise.Tests.Controllers
             Assert.Equal(funcionario, okResult.Value);
         }
 
-       
+
 
         [Fact]
         public void GetAll_ShouldReturnListOfFuncionarios_WhenFuncionariosExist()

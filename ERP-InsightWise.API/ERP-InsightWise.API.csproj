@@ -29,6 +29,7 @@
     <ProjectReference Include="..\ERP-InsightWise.Database\ERP-InsightWise.Database.csproj" />
     <ProjectReference Include="..\ERP-InsightWise.Repository\ERP-InsightWise.Repository.csproj" />
     <ProjectReference Include="..\ERP-InsightWise.Service\ERP-InsightWise.Service.csproj" />
+    <ProjectReference Include="..\myMLApp\myMLApp.csproj" />
   </ItemGroup>
 
   <ItemGroup>

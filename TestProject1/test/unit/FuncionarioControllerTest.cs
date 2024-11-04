@@ -6,7 +6,7 @@ using ERP_InsightWise.Repository;
 using ERP_InsightWise.API.Controllers;
 using System.Net;
 
-namespace ERP_InsightWise.Tests.Controllers
+namespace test.unit
 {
     public class FuncionarioControllerTest : IDisposable
     {
@@ -187,7 +187,7 @@ namespace ERP_InsightWise.Tests.Controllers
             // Assert
             Assert.NotNull(result);
             var okResult = result as OkResult;
-            Assert.NotNull(okResult); 
+            Assert.NotNull(okResult);
             Assert.Equal((int)HttpStatusCode.OK, okResult.StatusCode);
 
             // Verifica se o funcionário foi atualizado no banco de dados
@@ -222,7 +222,7 @@ namespace ERP_InsightWise.Tests.Controllers
             };
 
             // Act
-            var result = _controller.Patch(99,funcionarioToUpdate);
+            var result = _controller.Patch(99, funcionarioToUpdate);
 
             // Assert
             var notFoundResult = result as NotFoundObjectResult;

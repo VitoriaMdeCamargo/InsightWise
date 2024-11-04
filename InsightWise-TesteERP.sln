@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ml", "ml", "{6F183069-6F54-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "myMLApp", "myMLApp\myMLApp.csproj", "{44D21D6C-E371-4B4C-BD18-A09FBB75E576}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP-InsightWise.Service", "ERP-InsightWise.Service\ERP-InsightWise.Service.csproj", "{B002DE0F-C624-44B4-A8A1-559CCB9169E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ERP-InsightWise.Service", "ERP-InsightWise.Service\ERP-InsightWise.Service.csproj", "{B002DE0F-C624-44B4-A8A1-559CCB9169E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
