@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.ComponentModel;
 namespace MyMLApp
 {
     public partial class SentimentModel
@@ -16,6 +17,7 @@ namespace MyMLApp
         public class ModelInput
         {
             [LoadColumn(0)]
+            [DefaultValue("O funcionário é bom e demonstrou grande comprometimento e habilidade na execução de suas tarefas.")]
             [ColumnName(@"col0")]
             public string Col0 { get; set; }
 

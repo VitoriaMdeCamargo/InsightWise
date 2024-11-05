@@ -67,7 +67,7 @@ namespace ERP_InsightWise.API
                 {
                     Title = builder.Configuration.GetSection("Swagger:Title").Value,
                     Description = builder.Configuration.GetSection("Swagger:Description").Value
-                    + "\n\n **Recomendação:** Para testes que solicitam um ID, use o ID 1, que estará previamente configurado no banco de dados.",
+                    + "\n\n **Recomendação:** Para testes que solicitam um ID, use o ID 25, que estará previamente configurado no banco de dados.",
                     Contact = new OpenApiContact()
                     {
                         Email = builder.Configuration.GetSection("Swagger:Email").Value,
