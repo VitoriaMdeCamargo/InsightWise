@@ -1,34 +1,46 @@
-# ASP.NET Core (.NET Framework)
-# Build and test ASP.NET Core projects targeting the full .NET Framework.
-# Add steps that publish symbols, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
 trigger:
 - main
-
+ 
 pool:
   vmImage: 'windows-latest'
-
+ 
 variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-
+  - name: buildPlatform
+    value: 'Any CPU'
+  - name: buildConfiguration
+    value: 'Release'
+  - group: AzureCredentialsGroup  # Grupo de variáveis seguras
+ 
 steps:
-- task: NuGetToolInstaller@1
-
+# Etapa 1: Instala o SDK do .NET 8.x
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '8.x'
+    installationPath: $(Agent.ToolsDirectory)/dotnet
+ 
+# Etapa 2: Restaura os pacotes NuGet para o projeto
 - task: NuGetCommand@2
   inputs:
-    restoreSolution: '$(solution)'
-
+    restoreSolution: '**/*.sln'  # Restaura todos os arquivos .sln
+ 
+# Etapa 3: Compila o projeto usando o Visual Studio Build
 - task: VSBuild@1
   inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+    solution: '**/*.sln'  # Compila todos os arquivos .sln
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: VSTest@2
+ 
+# Etapa 4: Publica o projeto e gera um arquivo ZIP para o deploy
+- task: DotNetCoreCLI@2
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: true  # Gera um arquivo ZIP após a publicação
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Vitoria Camargo(1)(4607ce1f-3a72-47d9-a4c0-63a9a60e8f18)'
+    appName: 'fiaptestegs'
+    package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
