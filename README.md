@@ -4,7 +4,7 @@
 
 Esta API permite operações CRUD para registros de funcionários e facilita a coleta de dados de interação dos usuários com a plataforma, submetendo-os para análise de produtividade em softwares ERP.
 
-## Integrantes do Grupo
+## Integrantes do Grupo global
 - **Breno Lemes Santiago** - RM: 552270
 - **Felipe Guedes Gonçalves** - RM: 550906
 - **Luiz Fellipe Soares de Sousa Lucena** - RM: 551365
