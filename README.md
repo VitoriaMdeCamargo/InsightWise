@@ -4,13 +4,6 @@
 
 Esta API permite operações CRUD para registros de funcionários e facilita a coleta de dados de interação dos usuários com a plataforma, submetendo-os para análise de produtividade em softwares ERP.
 
-## Integrantes do Grupo global
-- **Breno Lemes Santiago** - RM: 552270
-- **Felipe Guedes Gonçalves** - RM: 550906
-- **Luiz Fellipe Soares de Sousa Lucena** - RM: 551365
-- **Nina Rebello Francisco** - RM: 99509
-- **Vitória Maria de Camargo** - RM: 552344
-
 ## Documentação da API - Swagger
 
 A documentação está disponível no navegador quando o programa está em execução.
@@ -102,10 +95,3 @@ Usei **Health Check** para monitorar automaticamente a saúde dos serviços da m
 - **.NET SDK**: Certifique-se de ter o .NET SDK instalado. Você pode baixar a versão mais recente do [site oficial do .NET](https://dotnet.microsoft.com/download).
 
 - **Banco de Dados**: O projeto usa um banco de dados SQL Developer - Oracle. Certifique-se de ter uma instância disponível e atualize a string de conexão no arquivo `appsettings.json` se necessário.
-
-### Passos para Executar a API
-
-1. **Clone o Repositório**
-
-   ```bash
-   git clone https://github.com/LuizLucena97/ERP-InsightWise.git
